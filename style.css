@@ -1,8 +1,8 @@
-/* Google font */
+/*************** Google font ***************/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
 
 
-/* attribution */
+/*************** attribution ***************/
 .attribution { 
     font-size: 11px; text-align: center;
     margin-top: 80px; 
@@ -11,7 +11,7 @@
     color: hsl(228, 45%, 44%); 
 }
 
-/* Basic settings */
+/*************** Basic settings ***************/
 :root{
     --primary-orange: hsl(35, 77%, 62%);
     --primary-red: hsl(5, 85%, 63%);
@@ -39,7 +39,7 @@ a {
     text-decoration: none !important;
 }
 
-/* Nav */
+/*************** Nav ***************/
 nav{
     max-height: 40px;
     height: 100%;
@@ -50,10 +50,15 @@ nav{
 .nav-tab p{
     font-size: 14px;
     padding: 0 14px;
+    transition: all .15s ease-out;
 }
 
+.nav-tab p:hover{
+    color: var(--primary-red);
+    transition: all .15s ease-out;
+}
 
-/* Main session */
+/*************** Main session ***************/
 .main-session {
     padding: 50px 0px;
 }
@@ -69,7 +74,6 @@ nav{
     font-weight: 800;
     color: var(--very-dark-gray-blue);
 }
-
 .headline button{
     margin-top: 35px;
     padding: 18px 30px;
@@ -79,18 +83,24 @@ nav{
     color: var(--white);
     letter-spacing: .25em;
     background-color: var(--primary-red);
+    transition: all .2s ease-out;
 }
-
 .article{
     padding-top: 2rem;
 }
-
 .article p{
     font-size: 14px;
     line-height: 1.5rem;
 }
 
-/* New article session */
+
+.article button:hover{
+    background-color: var(--very-dark-gray-blue);
+    transition: all .2s ease-out;
+}
+
+
+/*************** New article session ***************/
 .new-article{
     background-color: var(--very-dark-gray-blue);
     padding: 30px 0px;
@@ -109,6 +119,7 @@ nav{
 }
 .new-article h3{
     color: var(--white);
+    transition: all .2s ease-out;
 }
 .new-article p{
     margin: 6px 0;
@@ -123,7 +134,13 @@ nav{
     margin-top: 30px;
 }
 
-/* Sub session */
+.article-blocks h3:hover{
+    color: var(--primary-orange);
+    transition: all .2s ease-out;
+}
+
+
+/*************** Sub session ***************/
 .sub-img{
     max-width: 130px;
     width: 100%;
@@ -133,8 +150,17 @@ nav{
     color: var(--gray-blue);
 }
 
+.sub-article h3{
+    transition: all .2s ease-out;
+}
+
+.sub-article h3:hover{
+    color: var(--primary-red);
+    transition: all .2s ease-out;
+}
 
 
+/* **************RWD************** */
 @media ( min-width : 1000px ) {
     body{
         padding: 70px 140px 35px 140px;
@@ -170,5 +196,8 @@ nav{
 
     .new-article{
         margin-top: 60px !important;
+    }
+    .sub-article{
+        padding-bottom: 10px;
     }
 }
