@@ -1,8 +1,8 @@
-/*************** Google font ***************/
+/* Google font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
 
 
-/*************** attribution ***************/
+/* attribution */
 .attribution { 
     font-size: 11px; text-align: center;
     margin-top: 80px; 
@@ -11,7 +11,7 @@
     color: hsl(228, 45%, 44%); 
 }
 
-/*************** Basic settings ***************/
+/* Basic settings */
 :root{
     --primary-orange: hsl(35, 77%, 62%);
     --primary-red: hsl(5, 85%, 63%);
@@ -35,30 +35,43 @@ h3{
 }
 
 a {
-    color: hsl(240, 100%, 5%) !important;
+    color: hsl(240, 100%, 5%) ;
     text-decoration: none !important;
 }
 
-/*************** Nav ***************/
+ul, li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ol, ul{
+    padding-left: 1rem !important;
+}
+
+
+/* Nav */
 nav{
     max-height: 40px;
     height: 100%;
     width: 100%;
 }
+.nav-tab{
+    display: flex;
+}
 
-
-.nav-tab p{
+.nav-tab a{
     font-size: 14px;
     padding: 0 14px;
-    transition: all .15s ease-out;
+    color: var(--very-dark-gray-blue);
 }
 
-.nav-tab p:hover{
+.nav-tab a:hover{
     color: var(--primary-red);
-    transition: all .15s ease-out;
 }
 
-/*************** Main session ***************/
+
+/* Main session */
 .main-session {
     padding: 50px 0px;
 }
@@ -74,6 +87,7 @@ nav{
     font-weight: 800;
     color: var(--very-dark-gray-blue);
 }
+
 .headline button{
     margin-top: 35px;
     padding: 18px 30px;
@@ -83,24 +97,23 @@ nav{
     color: var(--white);
     letter-spacing: .25em;
     background-color: var(--primary-red);
-    transition: all .2s ease-out;
 }
+
+.headline button:hover{
+    background-color: var(--very-dark-gray-blue);
+}
+
+
 .article{
     padding-top: 2rem;
 }
+
 .article p{
     font-size: 14px;
     line-height: 1.5rem;
 }
 
-
-.article button:hover{
-    background-color: var(--very-dark-gray-blue);
-    transition: all .2s ease-out;
-}
-
-
-/*************** New article session ***************/
+/* New article session */
 .new-article{
     background-color: var(--very-dark-gray-blue);
     padding: 30px 0px;
@@ -119,7 +132,9 @@ nav{
 }
 .new-article h3{
     color: var(--white);
-    transition: all .2s ease-out;
+}
+.new-article h3:hover{
+    color: var(--primary-orange);
 }
 .new-article p{
     margin: 6px 0;
@@ -134,13 +149,7 @@ nav{
     margin-top: 30px;
 }
 
-.article-blocks h3:hover{
-    color: var(--primary-orange);
-    transition: all .2s ease-out;
-}
-
-
-/*************** Sub session ***************/
+/* Sub session */
 .sub-img{
     max-width: 130px;
     width: 100%;
@@ -149,18 +158,15 @@ nav{
 .sub-article h2{
     color: var(--gray-blue);
 }
-
-.sub-article h3{
-    transition: all .2s ease-out;
+.article-tittle{
+    color:var(--very-dark-gray-blue);
 }
 
-.sub-article h3:hover{
+.article-tittle:hover{
     color: var(--primary-red);
-    transition: all .2s ease-out;
 }
 
 
-/* **************RWD************** */
 @media ( min-width : 1000px ) {
     body{
         padding: 70px 140px 35px 140px;
@@ -197,7 +203,102 @@ nav{
     .new-article{
         margin-top: 60px !important;
     }
-    .sub-article{
-        padding-bottom: 10px;
-    }
 }
+
+
+/* Hamburger menu */
+
+@media  (max-width : 750px) {
+    
+.hamburger-wrap{
+    display: block;
+    transform: translateX(200%);
+    position: fixed;
+    top: 0;
+    right:0;
+    height: 100%;
+    width: 70%;
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    z-index: 2000;
+
+    transition: transform 500ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav-toggle {
+    position: fixed;
+    top: 5em;
+    right: 0;
+    transform: translateX(-100%);
+    padding-top: 1em;
+    border: 0;
+
+    z-index: 2100;
+    cursor: pointer;
+
+  }
+  
+  .hamburger {
+    display: block;
+    position: relative;
+    z-index: 2100;
+    
+  }
+  
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    width: 2em;
+    height: 2px;
+    background: #505050;
+    
+    transition: transform 350ms ease-in-out, opacity 200ms linear;
+    
+    z-index: 1500;
+    
+  }
+  
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+  
+  .hamburger::before { bottom: 10px; }
+  .hamburger::after { top: 10px;}
+  
+  
+  /* Navigation open styles */
+  
+  .nav-open .hamburger-wrap {
+    transform: translateX(0);
+  }
+  .nav-tab{
+    display: inline-block !important;
+    margin-top: 130px;
+    
+  }
+
+  .nav-tab a{
+    font-size: 20px;
+  }
+  
+  /* Change this stuff below */
+  
+  .nav-open .hamburger {
+    transform: rotate(45deg);
+    background: var(--primary-orange);
+  }
+  
+  .nav-open .hamburger::before {
+    opacity: 0;
+  }
+  
+  .nav-open .hamburger::after {
+    transform: rotate(90deg) translate(-10px);
+    background: var(--primary-orange);
+  }
+}
+
+/*  */
